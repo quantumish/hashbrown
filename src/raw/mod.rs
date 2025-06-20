@@ -592,7 +592,7 @@ pub struct RawTable<T, A: Allocator = Global> {
 
 /// Non-generic part of `RawTable` which allows functions to be instantiated only once regardless
 /// of how many different key-value types are used.
-struct RawTableInner {
+pub struct RawTableInner {
     // Mask to get an index from a hash value. The value is one less than the
     // number of buckets in the table.
     bucket_mask: usize,
