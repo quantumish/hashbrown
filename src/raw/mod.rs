@@ -584,7 +584,7 @@ impl<T> Bucket<T> {
 
 /// A raw hash table with an unsafe API.
 pub struct RawTable<T, A: Allocator = Global> {
-    table: RawTableInner,
+    pub table: RawTableInner,
     alloc: A,
     // Tell dropck that we own instances of T.
     marker: PhantomData<T>,
