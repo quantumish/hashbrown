@@ -2225,7 +2225,7 @@ impl RawTableInner {
     /// [`RawTableInner::buckets`]: RawTableInner::buckets
     /// [`undefined behavior`]: https://doc.rust-lang.org/reference/behavior-considered-undefined.html
     #[inline]
-    unsafe fn bucket<T>(&self, index: usize) -> Bucket<T> {
+    pub unsafe fn bucket<T>(&self, index: usize) -> Bucket<T> {
         debug_assert_ne!(self.bucket_mask, 0);
         debug_assert!(index < self.buckets());
         Bucket::from_base_index(self.data_end(), index)
