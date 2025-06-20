@@ -23,7 +23,7 @@ unsafe fn offset_from<T>(to: *const T, from: *const T) -> usize {
 
 /// Whether memory allocation errors should return an error or abort.
 #[derive(Copy, Clone)]
-enum Fallibility {
+pub enum Fallibility {
     Fallible,
     Infallible,
 }
@@ -1024,7 +1024,7 @@ impl<T, A: Allocator> RawTable<T, A> {
     ///
     /// [`RawTableInner::find_insert_slot`]: RawTableInner::find_insert_slot
     /// [`undefined behavior`]: https://doc.rust-lang.org/reference/behavior-considered-undefined.html
-    unsafe fn resize(
+    pub unsafe fn resize(
         &mut self,
         capacity: usize,
         hasher: impl Fn(&T) -> u64,
