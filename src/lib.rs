@@ -71,7 +71,7 @@ doc_comment::doctest!("../README.md");
 mod macros;
 
 mod control;
-mod raw;
+pub mod raw;
 mod util;
 
 mod external_trait_impls;
