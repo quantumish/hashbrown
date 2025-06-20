@@ -2863,7 +2863,7 @@ impl RawTableInner {
     #[allow(clippy::inline_always)]
     #[cfg_attr(feature = "inline-more", inline(always))]
     #[cfg_attr(not(feature = "inline-more"), inline)]
-    unsafe fn rehash_in_place(
+    pub unsafe fn rehash_in_place(
         &mut self,
         hasher: &dyn Fn(&mut Self, usize) -> u64,
         size_of: usize,
